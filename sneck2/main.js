@@ -1,26 +1,31 @@
-let i = 0;
-
-while(i < 1){
-
-    let numberPerson = Number(prompt("Inserisci un numero tra 1 e 5"));
-
-if(numberPerson <= 5 && numberPerson > 0){
-    i++;
-}
-
-};
-
-
-const min = 0;
-const max = 5;
-
 
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1) ) + min;
   };
 
-const numberPC = getRndInteger(min, max);
+function evenOdd(num){
+    if(num%2==0){
+        return "pari";
+    }
+    else{
+        return "dispari";
+    }
+}
+
+const choseUser = prompt("inserisci pari o dispari");
+
+const numberPC = getRndInteger(1, 5);
+
+const numberPerson = Number(prompt("Inserisci un numero tra 1 e 5"));
 
 const numbersSum = numberPC + numberPerson;
 
-console.log(numbersSum);
+const result = evenOdd(numbersSum)
+
+if (result == choseUser){
+    console.log("Hai vinto");
+}
+
+else {
+    console.log("Hai perso");
+}
